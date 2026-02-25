@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(/images/ground.png);
+    background-position: bottom;
+    animation: ground-animation 10s linear infinite;
+}
+
+.game-board {
+    width: 100%;
+    height: 500px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background-image: linear-gradient(#74ccff, #bcd8fc);
+}
+
+.pipe {
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    animation: pipe-animation 1.5s linear infinite;
+    z-index: 999;
+}
+
+.clouds {
+    top: 20px;
+    width: 550px;
+    position: absolute;
+    animation: clouds-animation 30s infinite linear;
+    opacity: 60%;
+}
+
+.mario {
+    width: 150px;
+    position: absolute;
+    bottom: 0px;
+    z-index: 1000;
+}
+
+.jump {
+    animation: jump 0.5s ease-out;
+}
+
+.score {
+    position: absolute;
+    z-index: 1002;
+    top: 20px;
+    right: 40px;
+    font-size: 32px;
+    color: rgb(255, 255, 255);
+    font-family: "Pixelify Sans", sans-serif
+}
+
+.restart {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 12px 24px;
+    font-size: 40px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgba(255, 0, 0, 0);
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    display: none;
+    z-index: 1005;
+    font-family: "Pixelify Sans", sans-serif;
+    transition: 0.6s ease;
+}
+
+.restart:hover {
+    color: rgb(255, 0, 0);
+}
+
+/* Keyframes -> */
+
+@keyframes jump {
+    0% {
+        bottom: 0px;
+    }
+
+    40% {
+        bottom: 180px;
+    }
+
+    50% {
+        bottom: 180px;
+    }
+
+    60% {
+        bottom: 180px;
+    }
+
+    100% {
+        bottom: 0px;
+    }
+}
+
+.mario-dead {
+    animation: death 6s forwards;
+}
+
+@keyframes death{
+    0% {
+        bottom: var(--mario-bottom);
+    }
+
+    30% {
+         bottom: calc(var(--mario-bottom) + 30px);
+    }
+
+    40% {
+        bottom: -200px;
+    }
+
+    100% {
+        bottom: -200px;
+    }
+}
+
+@keyframes clouds-animation {
+    from {
+        right: -80px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes pipe-animation {
+    from {
+        right: -80px;
+    }
+
+    to {
+        right: 100%;
+    }
+
+}@keyframes ground-animation {
+    from {
+        background-position: 0 bottom;
+    }
+
+    to {
+        background-position: -1000px bottom;
+    }
+
+}
+
+/*:D*/
