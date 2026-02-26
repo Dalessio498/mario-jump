@@ -1,8 +1,8 @@
 const mario = document.querySelector('.mario');
 const pipe = document.querySelector('.pipe');
 const ground = document.body;
-const deathSound = new Audio('./sounds/super-mario-death.mp3');
-const pointSound = new Audio('./sounds/pointSound.mp3');
+const deathSound = new Audio('sounds/super-mario-death.mp3');
+const pointSound = new Audio('sounds/pointSound.mp3');
 const scoreElement = document.querySelector('.score');
 const restartBtn = document.querySelector('.restart')
 
@@ -45,7 +45,7 @@ const loop = setInterval(() => {
     mario.style.setProperty('--mario-bottom', `${marioPosition}px`);
     mario.classList.add('mario-dead');
 
-    mario.src = './images/game-over.png';
+    mario.src = 'images/game-over.png';
     mario.style.width = '75px';
     mario.style.marginLeft = '50px';
 
@@ -58,4 +58,5 @@ const loop = setInterval(() => {
 document.addEventListener('keydown', jump);
 
 /*:D*/
+
 
